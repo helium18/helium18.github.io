@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.19 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.21 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -472,6 +472,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: visible;
 }
 
+.relative {
+  position: relative;
+}
+
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
+.bottom-20 {
+  bottom: 5rem;
+}
+
+.bottom-96 {
+  bottom: 24rem;
+}
+
+.top-96 {
+  top: 24rem;
+}
+
 .m-10 {
   margin: 2.5rem;
 }
@@ -523,6 +543,74 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@-webkit-keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: center center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+
+  25% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: center center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+
+  25% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+}
+
+.animate-gradient-xy {
+  -webkit-animation: gradient-xy 10s ease infinite;
+          animation: gradient-xy 10s ease infinite;
+}
+
+@-webkit-keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  -webkit-animation: gradient-x 10s ease infinite;
+          animation: gradient-x 10s ease infinite;
+}
+
 .resize {
   resize: both;
 }
@@ -535,14 +623,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 1px;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(65 72 104 / var(--tw-bg-opacity));
-}
-
 .bg-d_black {
   --tw-bg-opacity: 1;
   background-color: rgb(36 40 59 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(65 72 104 / var(--tw-bg-opacity));
 }
 
 .bg-milk {
@@ -552,6 +640,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-t {
@@ -566,6 +658,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
+.bg-none {
+  background-image: none;
+}
+
+.from-d_black {
+  --tw-gradient-from: #24283b;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(36 40 59 / 0));
+}
+
 .from-d_blue {
   --tw-gradient-from: #2ac3de;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(42 195 222 / 0));
@@ -576,17 +681,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(65 72 104 / 0));
 }
 
-.from-d_black {
-  --tw-gradient-from: #24283b;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(36 40 59 / 0));
+.via-black {
+  --tw-gradient-stops: var(--tw-gradient-from), #414868, var(--tw-gradient-to, rgb(65 72 104 / 0));
 }
 
-.to-black {
-  --tw-gradient-to: #414868;
+.via-l_blue {
+  --tw-gradient-stops: var(--tw-gradient-from), #b4f9f8, var(--tw-gradient-to, rgb(180 249 248 / 0));
 }
 
 .to-cyan {
   --tw-gradient-to: #73daca;
+}
+
+.to-black {
+  --tw-gradient-to: #414868;
 }
 
 .bg-center {
@@ -597,8 +705,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1.25rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .text-xl {
@@ -609,6 +729,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
 }
 
 .text-white {
@@ -630,42 +755,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   outline-style: solid;
 }
 
-@media (min-width: 640px) {
-  .sm\:h-screen {
-    height: 100vh;
-  }
-
-  .sm\:h-max {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-  }
-
-  .sm\:object-contain {
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
+.duration-300 {
+  transition-duration: 300ms;
 }
 
-@media (min-width: 768px) {
-  .md\:h-fit {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-
-  .md\:h-screen {
-    height: 100vh;
-  }
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
